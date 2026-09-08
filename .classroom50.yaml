@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "ds-turma-3a"
+assignment: "aula07-requisitos-ordenacao"
+owner:
+  username: "kauaoliveira-cloud"
+  id: 315353761
+  accepted_at: "2026-09-08T11:42:25Z"
+source:
+  owner: "desenvolvimento-sistemas-2026-2"
+  owner_id: 318238261
+  repo: "aula07-requisitos-ordenacao-template"
+  branch: "main"
