@@ -15,6 +15,16 @@ public class AlunoRepository {
     public List<Aluno> listarTodos() {
         return alunos;
     }
+    
+    public List<Aluno> listarPorSemestre(int semestre) {
+        List<Aluno> resultado = new ArrayList<>();
+        for (Aluno aluno : alunos) {
+            if (aluno.getSemestre() == semestre) {
+                resultado.add(aluno);
+            }
+        }
+        return resultado;
+    }
 
     public Aluno buscarPorNome(String nome) {
         for (Aluno aluno : alunos) {

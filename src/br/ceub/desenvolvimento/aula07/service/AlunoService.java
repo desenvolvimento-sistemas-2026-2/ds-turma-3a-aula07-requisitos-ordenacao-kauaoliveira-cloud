@@ -40,6 +40,19 @@ public class AlunoService {
         }
         return resultado;
     }
+    
+    public String listarPorSemestre(int semestre) {
+        List<Aluno> alunos = repository.listarPorSemestre(semestre);
+        if (alunos.isEmpty()) {
+            return "Nenhum aluno encontrado no semestre " + semestre + ".";
+        }
+
+        String resultado = "Alunos do semestre " + semestre + ":\n";
+        for (Aluno aluno : alunos) {
+            resultado += aluno.gerarResumo() + "\n";
+        }
+        return resultado;
+    }
 
     public String buscarPorNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {

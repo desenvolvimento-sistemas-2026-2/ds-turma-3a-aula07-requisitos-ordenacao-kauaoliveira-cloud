@@ -16,6 +16,10 @@ public class AlunoController {
     public String listarTodos() {
         return service.listarTodos();
     }
+    
+    public String listarPorSemestre(int semestre) {
+        return service.listarPorSemestre(semestre);
+    }
 
     public String buscarPorNome(String nome) {
         return service.buscarPorNome(nome);

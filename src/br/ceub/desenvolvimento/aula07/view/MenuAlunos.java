@@ -18,8 +18,10 @@ public class MenuAlunos {
                     + "2 - Listar alunos\n"
                     + "3 - Buscar aluno por nome\n"
                     + "4 - Ver quantidade de alunos\n"
+                    + "5 - Listar alunos em ordem alfabetica\n"
+                    + "6 - Listar alunos por semestre\n"
                     + "0 - Sair";
-            opcao = lerInteiro(menu, 0, 4);
+            opcao = lerInteiro(menu, 0, 6);
 
             if (opcao == 1) {
                 cadastrarAluno();
@@ -30,11 +32,14 @@ public class MenuAlunos {
                 mostrar(controller.buscarPorNome(nome));
             } else if (opcao == 4) {
                 mostrar("Total de alunos cadastrados: " + controller.quantidade());
+            } else if (opcao == 6) {
+                int semestre = lerInteiro("Digite o semestre:", 1, 10);
+                mostrar(controller.listarPorSemestre(semestre));
             }
+            mostrar("Programa encerrado. Total de alunos: " + controller.quantidade());
         }
-        mostrar("Programa encerrado. Total de alunos: " + controller.quantidade());
     }
-
+    
     private void cadastrarAluno() {
         String nome = lerTexto("Nome do aluno:");
         String curso = lerTexto("Curso:");
@@ -72,4 +77,6 @@ public class MenuAlunos {
     private void mostrar(String mensagem) {
         JOptionPane.showMessageDialog(null, mensagem);
     }
+    
+    
 }
